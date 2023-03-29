@@ -129,6 +129,8 @@ ul {
    background-color: var(--main-color-1);
    color: #FFF;
    font-size: 0.85rem;
+   min-width: 125px;
+   text-align: center;
    letter-spacing: 0.4px;
    text-transform: capitalize;
    transition: .3s;
@@ -472,6 +474,22 @@ header.scrolled .logo{
    padding: 5rem 6rem;
    border-radius: 20px;
    width: 100%;
+   position: relative;
+}
+
+.skills .dots{
+   position: absolute;
+   left: 0;
+   top: 0;
+   transform: translate(-50%, -50%);
+   z-index: -1;
+}
+
+.skills .square{
+   position: absolute;
+   left: 100%;
+   top: 75%;
+   transform: translate(-50%, -50%);
 }
 
 .box-desc{
