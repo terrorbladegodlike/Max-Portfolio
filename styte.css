@@ -33,6 +33,31 @@ body.dark {
    --text-color: hsl(var(--hue-1), 14%, 51%);
 }
 
+body.dark .st1{
+   fill: hsl(var(--hue-1), 18%, 29%);
+}
+
+body.dark .shape.square{
+   opacity: 0.07;
+}
+
+body.dark .toggle-btn{
+   background-color: var(--bg-color-3);
+}
+
+body.dark .toggle-btn:hover{
+   background-color: brightness(110%);
+}
+
+body.dark .nav-link:hover::after,
+body.dark .nav-link.active::after{
+   opacity: 0.6;
+}
+
+body.dark .form-input:hover{
+   filter: brightness(110%);
+}
+
 /* --------------- General Styles --------------- */
 
 *,
@@ -43,10 +68,15 @@ body.dark {
    box-sizing: border-box;
 }
 
+html{
+   scroll-behavior: smooth;
+}
+
 body {
    font-family: "Poppins", sans-serif;
    overflow-x: hidden;
-   background-color: hsl(257, 100%, 97%);
+   background-color: var(--bg-color);
+   transition: .3s background-color;
 }
 
 body.stopScrolling{
@@ -95,6 +125,7 @@ ul {
    padding: 0.13rem 0.75rem;
    margin-bottom: 1rem;
    font-weight: 500;
+   transition: .3s color;
 }
 
 .heading{
@@ -103,6 +134,7 @@ ul {
    font-family: "Abril Fatface", cursive;
    font-weight: 400;
    line-height: 1.3;
+   transition: .3s color;
 }  
 
 .text{
@@ -110,6 +142,7 @@ ul {
    font-size: 0.9rem;
    margin: 2rem 0;
    line-height: 2.3;
+   transition: .3s color;
 }
 
 .section{
@@ -138,6 +171,10 @@ ul {
    text-align: center;
    letter-spacing: 0.4px;
    text-transform: capitalize;
+   border: none;
+   outline: none;
+   font-family: inherit;
+   cursor: pointer;
    transition: .3s;
 }
 
@@ -195,6 +232,42 @@ ul {
 
 .square{
    width: 70px;
+   transition: .3s opacity;
+}
+
+.form-input{
+   display: inline-block;
+   padding: 0.9rem 1.5rem;
+   background: var(--bg-color-3);
+   border: 2px solid var(--bg-color-3);
+   width: 100%;
+   border-radius: 17px;
+   font-family: inherit;
+   font-size: 0.85rem;
+   font-weight: 500;
+   color: var(--heading-color);
+   outline: 0;
+   transition: .3s;
+}
+
+.form-input::placeholder{
+   color: var(--text-color);
+}
+
+.form-input:hover{
+   filter: brightness(97%);
+}
+
+.form-input:valid,
+.form-input:focus{
+   filter: brightness(100%);
+   background: var(--bg-color-1);
+   border-color: var(--main-color-1);
+}
+
+textarea.form-input{
+   resize: none;
+   min-height: 170px;
 }
 
 /* --------------- Navbar Styling --------------- */
@@ -273,11 +346,13 @@ header.scrolled .logo{
    transition: 0.3s;
 }
 
-.nav-link:hover{
+.nav-link:hover,
+.nav-link.active{
    color: var(--heading-color);
 }
 
-.nav-link:hover::after{
+.nav-link:hover::after,
+.nav-link.active::after{
    width: 100%;
    opacity: 0.2;
 }
@@ -315,7 +390,7 @@ header.scrolled .logo{
    display: grid;
    grid-template-columns: 1fr 550px;
    height: calc(100vh - 120px);
-   max-height: 600px;
+   height: 600px;
    align-items: center;
 }
 
@@ -406,7 +481,7 @@ header.scrolled .logo{
    align-items: center;
    justify-content: center;
    cursor: pointer;
-   transition: .5s transform;  
+   transition: .5s transform, 0.3s background-color;  
 }
 
 .about-card:hover{
@@ -437,15 +512,18 @@ header.scrolled .logo{
 
 .st0{
    fill: var(--bg-color-3);
+   transition: .3s fill;
 }
 
 .st1{
    fill: #c53eea;
+   transition: .3s fill;
 }
 
 .st2{
    fill: var(--heading-color);
    transition: .3s;
+   transition: .3s fill;
 }
 
 .about-card:hover .st2{
@@ -458,6 +536,7 @@ header.scrolled .logo{
    font-size: 1rem;
    margin-top: 1rem;
    letter-spacing: 0.3px;
+   transition: .3s color;
 }
 
 .about-grid::before{
@@ -492,6 +571,7 @@ header.scrolled .logo{
    border-radius: 20px;
    width: 100%;
    position: relative;
+   transition: .3s background-color;
 }
 
 .skills .dots{
@@ -552,6 +632,7 @@ header.scrolled .logo{
    stroke-dasharray: 427px;
    stroke-linecap: round;
    stroke-dashoffset: 427;
+   transition: .3s;
 }
 
 @keyframes progress {
@@ -569,6 +650,7 @@ header.scrolled .logo{
    color: var(--heading-color);
    font-weight: 400;
    font-size: 0.9rem;
+   transition: .3s color;
 }
 
 .counter span{
@@ -580,6 +662,7 @@ header.scrolled .logo{
    margin-top: 0.75rem;
    font-weight: 400;
    font-size: 1rem;
+   transition: .3s color;
 }
 
 /* --------------- Services Section Styling --------------- */
@@ -603,12 +686,14 @@ header.scrolled .logo{
 .milestones h2{
    color: var(--main-color-1);
    font-size: 1.3rem;
+   transition: .3s color;
 }
 
 .milestones h2 span{
    font-size: 2rem;
    line-height: 1.2;
    margin-right: 0.1rem;
+   transition: .3s color;
 }
 
 .milestones h5{
@@ -616,6 +701,7 @@ header.scrolled .logo{
    line-height: 0.9;
    font-weight: 500;
    font-size: 0.95rem;
+   transition: .3s color;
 }
 
 .services-grid{
@@ -635,12 +721,14 @@ header.scrolled .logo{
    align-items: flex-start;
    justify-content: space-between;
    min-height: 280px;
+   transition: .3s background-color;
 }
 
 .service-card h3{
    color: var(--heading-color);
    font-weight: 500;
    font-size: 1.05rem;
+   transition: .3s color;
 }
 
 .service-card .text{
@@ -715,6 +803,7 @@ header.scrolled .logo{
    margin-left: 1.3rem;
    font-family: inherit;
    text-transform: uppercase;
+   transition: .3s color;
 }
 
 .filter-btn.mixitup-control-active{
@@ -734,6 +823,7 @@ header.scrolled .logo{
    height: 265px;
    display: grid;
    grid-template-rows: 1fr auto;
+   transition: .3s background-color;
 }
 
 .portfolio-image{
@@ -880,4 +970,279 @@ header.scrolled .logo{
    transform: translate(-50%, -50%);
    opacity: 1;
    transition: .45s .1s;
+}
+
+/* --------------- Testimonials Section Styling --------------- */
+
+.testimonials{
+   padding: var(--section-padding) 0 calc(var(--section-padding) + 120px);
+}
+
+.testimonials .container{
+   display: grid;
+   align-items: center;
+   grid-template-columns: 1.2fr 1fr;
+}
+
+.swiper{
+   width: 100%;
+   background-color: var(--bg-color-2);
+   border-radius: 15px;
+   padding: 4rem 0 2.5rem;
+   transition: .3s background-color;
+}
+
+.swiper-slide{
+   padding: 0 2.5rem;
+}
+
+.swiper-pagination{
+   position: static;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 3rem;
+}
+
+.swiper-pagination-bullet{
+   background-color: var(--main-color-1);
+   opacity: 0.3;
+   width: 7px;
+   height: 7px;
+   cursor: pointer;
+}
+
+.swiper-pagination-bullet-active{
+   opacity: 1;
+   width: 11px;
+   height: 11px;
+}
+
+.client{
+   display: grid;
+   align-items: center;
+   gap: 1.5rem;
+   grid-template-columns: 85px 1fr;
+}
+
+.client img {
+   width: 100%;
+}
+
+.client-info h4{
+   font-weight: 500;
+   color: var(--heading-color);
+   margin-bottom: 0.3rem;
+   font-size: 1.05rem;
+   transition: .3s color;
+}
+
+.client-info h5{
+   color: var(--text-color);
+   font-weight: 500;
+   font-size: 0.8rem;
+   transition: .3s color;
+}
+
+.client-info h5 a{
+   color: var(--main-color-1);
+   transition: .3s color;
+}
+
+.swiper-slide .text{
+   display: block;
+   margin: 1.5rem 0 0;
+}
+
+.testimonials-title{
+   padding-left: 5rem;
+}
+
+.testimonials-title > *{
+   color: #fff;
+}
+
+.section-background{
+   position: absolute;
+   width: 100vw;
+   top: 15px;
+   left: 50%;
+   transform: translateX(calc(-50% + 120px));
+   max-width: 75rem;
+   height: calc(100% + 120px);
+   background-image: linear-gradient(
+      55deg,
+      var(--main-color-2) 20%,
+      var(--main-color-1) 20%
+   );
+   border-bottom-left-radius: 60px;
+   z-index: -1;
+}
+
+.section-background .person{
+   position: absolute;
+   height: 450px;
+   bottom: 0;
+   right: 0;  
+}
+
+.section-background .circle{
+   position: absolute;
+   width: 170px;
+   left: 45%;
+   top: 79%;
+   transform: translate(-50%, -50%);
+}
+
+.section-background .square{
+   position: absolute;
+   left: 77%;
+   top: 15%;
+   transform: translate(-50%, -50%);
+}
+
+/* --------------- Contact Section Styling --------------- */
+
+.contact .container{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   column-gap: 4rem;
+}
+
+.mail{
+   color: var(--main-color-1);
+   font-weight: 500;
+   font-size: 1.1rem;
+}
+
+.mail i{
+   display: inline-block;
+   font-size: 1.5rem;
+   margin-left: 2px;
+   transform: translateY(3px);
+   transition: .3s margin-left;
+}
+
+.mail:hover{
+   color: var(--main-color-dark-2);
+}
+
+.mail:hover i{
+   margin-left: 10px;
+}
+
+.contact-form{
+   background-color: var(--bg-color-2);
+   border-radius: 20px;
+   padding: 3.5rem 3rem;
+   display: flex;
+   flex-direction: column;
+   transition: .3s background-color;
+}
+
+.contact-form h3{
+   color: var(--heading-color);
+   font-size: 1.3rem;
+   font-weight: 500;
+   margin-bottom: 1.6rem;
+   line-height: 0.9;
+   transition: .3s color;
+}
+
+.contact-form .form-input{
+   margin-bottom: 1.5rem;
+}
+
+.contact .square{
+   position: absolute;
+   left: 17%;
+   bottom: 15%;
+   transform: translate(-50%, -50%);
+}
+
+.contact .triangle{
+   position: absolute;
+   left: 90%;
+   top: 98%;
+   transform: translate(-50%, -50%);
+}
+
+/* --------------- Subscription Section Styling --------------- */
+
+.subscription{
+   overflow: hidden;
+}
+
+.sub-box{
+   background-color: var(--bg-color-2);
+   padding: 5rem;
+   width: 100%;
+   border-radius: 20px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   column-gap: 6rem;
+   align-items: center;
+   transition: .3s background-color;
+}
+
+.sub-box .heading{
+   font-size: 2rem;
+   margin-top: 2rem;
+}
+
+.sub-box form {
+   display: grid;
+   grid-template-columns: 1fr auto;
+   column-gap: 1rem;
+}
+
+.subscription .map{
+   position: absolute;
+   height: 150%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: -1;
+   opacity: .15;
+}
+
+.subscription .square{
+   position: absolute;
+   left: 52%;
+   bottom: 7%;
+   transform: translate(0, -50%) scale(0.95);
+}
+
+/* --------------- Footer Section Styling --------------- */
+
+footer{
+   padding: 4rem 0;
+}
+
+footer .container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+footer .social-media{
+   display: flex;
+}
+
+.social-link{
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   margin-left: 1rem;
+   background-color: var(--bg-color-1);
+   color: var(--text-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: .3s;
+}
+
+.social-link:hover{
+   color: var(--main-color-1);
 }

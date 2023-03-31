@@ -7,6 +7,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Portfolio</title>
 
+   <!-- Swiper JS Library -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
    <!-- Scroll Reveal Library -->
    <script src="https://unpkg.com/scrollreveal"></script>
    <!-- Boxicon Usage -->
@@ -25,19 +27,19 @@
          <div class="links">
             <ul>
                <li>
-                  <a href="#" class="nav-link">Home</a>
+                  <a href="#home" class="nav-link">Home</a>
                </li>
                <li>
-                  <a href="#" class="nav-link">About</a>
+                  <a href="#about" class="nav-link">About</a>
                </li>
                <li>
-                  <a href="#" class="nav-link">Services</a>
+                  <a href="#services" class="nav-link">Services</a>
                </li>
                <li>
-                  <a href="#" class="nav-link">Portfolio</a>
+                  <a href="#portfolio" class="nav-link">Portfolio</a>
                </li>
                <li>
-                  <a href="#" class="nav-link">Contact</a>
+                  <a href="#contact" class="nav-link">Contact</a>
                </li>
             </ul>
             <i class='bx bx-moon toggle-btn'></i>
@@ -53,7 +55,7 @@
 
       <!-- Showcase start -->
 
-      <section class="showcase-area">
+      <section class="showcase-area" id="home">
          <img src="./assets/square1.png" class="shape square" alt="square1">
          <div class="container">
 
@@ -80,7 +82,7 @@
 
       <!-- About start -->
 
-      <section class="about section">
+      <section class="about section" id="about">
          <img src="./assets/triangle.png" class="shape triangle" alt="triangle">
          <div class="container">
 
@@ -501,7 +503,7 @@
 
       <!-- Services start -->
 
-      <section class="services section">
+      <section class="services section" id="services">
          <img src="./assets/triangle.png" alt="triangle" class="shape triangle">
          <div class="container">
 
@@ -588,7 +590,7 @@
 
       <!-- Portfolio start -->
 
-      <section class="portfolio section">
+      <section class="portfolio section" id="portfolio">
          <div class="modal">
             <div class="modal-overlay"></div>
             <div class="slider-wrap">
@@ -742,15 +744,181 @@
 
       <!-- Testimonials start -->
 
+      <section class="testimonials section">
+         <div class="container">
+
+            <div class="section-background">
+               <img src="./assets/person2.png" class="person" alt="person2">
+               <img src="./assets/circle2.png" class="circle" alt="circle2">
+               <img src="./assets/square1.png" class="square" alt="square1">
+            </div>
+
+            <div class="swiper">
+
+               <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                     <div class="client">
+                        <img src="./assets/testi1.png" alt="testi1">
+                        <div class="client-info">
+                           <h4>Kelly Williams</h4>
+                           <h5>Executive Officer <a href="">@ABEnergy</a></h5>
+                        </div>
+                     </div>
+                     <q class="text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum autem et, doloribus dolorum
+                        excepturi perspiciatis aliquid illo quibusdam repudiandae. In ex adipisci quod veritatis!
+                        Excepturi
+                        odit ipsa perferendis. Quis, recusandae.
+                     </q>
+                  </div>
+
+                  <div class="swiper-slide">
+                     <div class="client">
+                        <img src="./assets/testi2.png" alt="testi1">
+                        <div class="client-info">
+                           <h4>Witold Gislenus</h4>
+                           <h5>CEO of <a href="">@Eco_Focus</a></h5>
+                        </div>
+                     </div>
+                     <q class="text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae cupiditate eligendi totam?
+                        Laborum, veniam obcaecati? Error officiis cum incidunt suscipit?
+                     </q>
+                  </div>
+
+                  <div class="swiper-slide">
+                     <div class="client">
+                        <img src="./assets/testi3.png" alt="testi3">
+                        <div class="client-info">
+                           <h4>Ben Dennis</h4>
+                           <h5>Software Engineer <a href="">@Epic_Dev</a></h5>
+                        </div>
+                     </div>
+                     <q class="text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At nobis nulla ipsa eos excepturi
+                        illum
+                        quibusdam, odio dolore, consectetur blanditiis debitis inventore vel quaerat! Veniam sunt vero
+                        praesentium eaque temporibus.
+                     </q>
+                  </div>
+
+               </div>
+
+               <div class="swiper-pagination"></div>
+
+            </div>
+
+            <div class="testimonials-title">
+               <h3 class="sub-heading">Testimonials</h3>
+               <h1 class="heading">Hear from my happy clients</h1>
+            </div>
+
+         </div>
+      </section>
 
       <!-- Testimonials end -->
 
+
+      <!-- Contact start -->
+
+      <section class="contact section" id="contact">
+         <img src="./assets/triangle.png" alt="triangle" class="shape triangle">
+         <div class="container">
+            <img src="./assets/square2.png" alt="square2" class="shape square">
+
+            <div class="contact-info">
+               <h3 class="sub-heading">Contact Me</h3>
+               <h1 class="heading">Let's work together</h1>
+               <p class="text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis facere cumque qui unde eaque est, eos
+                  deleniti voluptates ipsam itaque.
+               </p>
+               <a href="mailto:ternovetchii.2002@mail.ru" class="mail">ternovetchii.2002@mail.ru <i
+                     class='bx bx-right-arrow-alt'></i> </a>
+            </div>
+            <form action="index.html" class="contact-form">
+               <h3>Send me a message</h3>
+               <input type="text" class="form-input" placeholder="Your Name" required>
+               <input type="email" class="form-input" placeholder="Your Email" required>
+               <textarea placeholder="Profect Details" class="form-input" required></textarea>
+               <input type="submit" value="Send" class="btn">
+            </form>
+
+         </div>
+      </section>
+
+      <!-- Contact end -->
+
+
+      <!-- Subscription start -->
+
+      <section class="subscription section">
+         <div class="container">
+            <img src="./assets/map.png" alt="map" class="map">
+
+            <div class="sub-box">
+               <img src="./assets/square2.png" alt="square2" class="shape square">
+               <div class="sub-info">
+                  <h3 class="sub-heading">Newsletter</h3>
+                  <h1 class="heading">Get news about my projects</h1>
+                  <p class="text">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ex dignissimos officia libero, fugit
+                     architecto ab eligendi. A, quis praesentium?
+                  </p>
+               </div>
+
+               <form action="index.html">
+                  <input type="mail" placeholder="Email" class="form-input" required>
+                  <input type="submit" value="Subscribe" class="btn">
+               </form>
+
+            </div>
+
+         </div>
+      </section>
+
+      <!-- Subcription end -->
 
    </main>
 
    <!-- Main end -->
 
+
+   <!-- Footer start -->
+
+   <footer>
+      <div class="container">
+
+         <a href="#" class="logo">Portf<span>olio.</span></a>
+
+         <p class="text">&copy; Copyright 2023. All rights reserved</p>
+
+         <ul class="social-media">
+            <il>
+               <a href="#" class="social-link">
+                  <i class='bx bxl-github'></i>
+               </a>
+            </il>
+            <il>
+               <a href="#" class="social-link">
+                  <i class='bx bxl-telegram'></i>
+               </a>
+            </il>
+            <il>
+               <a href="#" class="social-link">
+                  <i class='bx bxl-instagram'></i>
+               </a>
+            </il>
+         </ul>
+
+      </div>
+   </footer>
+
+   <!-- Footer end -->
+
    <!-- Script -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="./js/mixitup.min.js"></script>
    <script src="./js/add.js"></script>
 </body>
